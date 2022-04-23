@@ -4,6 +4,7 @@ package practica2;
 import java.util.Scanner;
 import static practica2.Metodes.DemanarNumero1;
 import static practica2.Metodes.DemanarNumero2;
+import static practica2.Metodes.DemanarOperacio;
 
 public class Practica2 {
 
@@ -11,7 +12,7 @@ public class Practica2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double res = 0;
-        String operacion, numero1="", numero2="";
+        String operacion="", numero1="", numero2="";
         boolean comprobar = false;
 
         do {
@@ -21,20 +22,8 @@ public class Practica2 {
             numero1 = DemanarNumero1(numero1);
             double nume1 = Double.parseDouble(numero1);
             double n1 = new Double(numero1);
-            do {
-                System.out.println("\n Quina operació vols fer? (Indica el signe)");
-                System.out.println(" + = sumar \n - = restar \n"
-                        + " x = multiplicar \n / = dividir \n * = elevar primer num al segon num."
-                        + "\n % = residu\n");
-                operacion = sc.nextLine();
-                if (operacion.equals("+") || operacion.equals("-") || operacion.equals("x")
-                        || operacion.equals("X") || operacion.equals("/") || operacion.equals("%")
-                        || operacion.equals("*")) {
-                    comprobar = true;
-                } else {
-                    comprobar = false;
-                }
-            } while (comprobar != true);
+            
+            operacion = DemanarOperacio (operacion);     
 
             numero2 = DemanarNumero2(numero2);
                     
