@@ -2,7 +2,8 @@
 package practica2;
 
 import java.util.Scanner;
-
+import static practica2.Metodes.DemanarNumero1;
+import static practica2.Metodes.DemanarNumero2;
 
 public class Practica2 {
 
@@ -10,19 +11,16 @@ public class Practica2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double res = 0;
-        String operacion;
+        String operacion, numero1="", numero2="";
         boolean comprobar = false;
 
         do {
 
-            String numero1;
-            do {
-                System.out.println("\n Introdueix el primer numero: ");
-                numero1 = sc.nextLine();
-            } while (!numero1.matches("[+-]?[\\d]*[.]?[\\d]+"));
+            
+            
+            numero1 = DemanarNumero1(numero1);
             double nume1 = Double.parseDouble(numero1);
             double n1 = new Double(numero1);
-
             do {
                 System.out.println("\n Quina operació vols fer? (Indica el signe)");
                 System.out.println(" + = sumar \n - = restar \n"
@@ -38,11 +36,8 @@ public class Practica2 {
                 }
             } while (comprobar != true);
 
-            String numero2;
-            do {
-                System.out.println("\n Introdueix el segon numero: ");
-                numero2 = sc.nextLine();
-            } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
+            numero2 = DemanarNumero2(numero2);
+                    
             double nume2 = Double.parseDouble(numero2);
             double n2 = new Double(numero2);
 
