@@ -26,4 +26,26 @@ public class Metodes {
             
         return numero2;
     }
+    
+    public static String DemanarOperacio(String operacion){
+        
+        Scanner sc = new Scanner(System.in);
+        boolean comprobar=false;
+        do {
+                System.out.println("\n Quina operació vols fer? (Indica el signe)");
+                System.out.println(" + = sumar \n - = restar \n"
+                        + " x = multiplicar \n / = dividir \n * = elevar primer num al segon num."
+                        + "\n % = residu\n");
+                operacion = sc.nextLine();
+                if (operacion.equals("+") || operacion.equals("-") || operacion.equals("x")
+                        || operacion.equals("X") || operacion.equals("/") || operacion.equals("%")
+                        || operacion.equals("*")) {
+                    comprobar = true;
+                } else {
+                    comprobar = false;
+                }
+            } while (comprobar != true);
+        
+        return operacion;
+    }
 }
